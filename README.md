@@ -1,6 +1,6 @@
 ## users テーブル
 |Column|Type|Options|
-|      |    |       |
+|------|----|-------|
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
 | nickname           | string | null: false |
@@ -17,7 +17,7 @@
 
 ## items テーブル
 |Column|Type|Options|
-|      |    |       |
+|------|----|-------|
 | title                  | string     | null: false |
 | detail                 | text       | null: false |
 | price                  | integer    | null: false |
@@ -26,18 +26,18 @@
 | shipping_fee_id        | integer    | null: false |
 | shipping_prefecture_id | integer    | null: false |
 | shipping_date_id       | integer    | null: false |
-| user                   | references | foreign_key: true |
+| user                   | references | null: false, foreign_key: true |
 
 ### Association
 - has_one :purchase
-- has_many :addresses
+- belongs_to :user
 
 
 ## purchases テーブル
 |Column|Type|Options|
-|      |    |       |
-| user | references | foreign_key: true |
-| item | references | foreign_key: true |
+|------|----|-------|
+| user | references | null: false, foreign_key: true |
+| item | references | null: false ,foreign_key: true |
 
 ### Association
 - has_one :address
@@ -47,8 +47,8 @@
 
 ## addresses テーブル
 |Column|Type|Options|
-|      |    |       |
-| purchase            | references | foreign key: true |
+|------|----|-------|
+| purchase            | references | null: false ,foreign key: true |
 | postal_code         | string     | null: false       |
 | shipping_prefecture | integer    | null: false       |
 | city                | string     | null: false       |

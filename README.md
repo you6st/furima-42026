@@ -48,13 +48,13 @@
 ## addresses テーブル
 |Column|Type|Options|
 |------|----|-------|
-| purchase            | references | null: false ,foreign key: true |
-| postal_code         | string     | null: false       |
-| shipping_prefecture | integer    | null: false       |
-| city                | string     | null: false       |
-| address_line        | string     | null: false       |
-| building_name       | string     |                   |
-| tel_num             | string     | null: false       |
+| purchase               | references | null: false ,foreign key: true |
+| postal_code            | string     | null: false       |
+| shipping_prefecture_id | integer    | null: false       |
+| city                   | string     | null: false       |
+| address_line           | string     | null: false       |
+| building_name          | string     |                   |
+| tel_num                | string     | null: false       |
 
 
 ### Association
